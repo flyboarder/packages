@@ -4,7 +4,7 @@
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "2.0.0-pre.1")
+(def +lib-version+ "2.0.1-0")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
@@ -18,7 +18,7 @@
 (deftask package []
   (comp
    (download :url (str "https://unpkg.com/feathers-client@" +lib-version+ "/dist/feathers.js")
-             :checksum "856BD02AA2061CA6ACD2BDE8A5B52DC0")
+             :checksum "12F004A0EC16E9000AFE4D8AB9067ACB")
    (sift :move {#"feathers.js" "cljsjs/feathers/development/feathers.inc.js"}
          :include #{#"^cljsjs"})
    (deps-cljs :name "cljsjs.feathers")
